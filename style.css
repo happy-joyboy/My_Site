@@ -5,6 +5,7 @@
     --cool: #ed462b;
     --bg_black: black;
     --vx: #161616;
+    --text: white;
 }
 *{
     margin: 0;
@@ -30,7 +31,7 @@ body{
     height: 100vh;
     overflow-x: hidden;
     background-color: var(--bg_black);
-    color: white;
+    color: var(--text);
 }
 
 /* header & nav */
@@ -75,7 +76,7 @@ header input{
 
 nav a{
     font-size: 1.8rem;
-    color: white;
+    color: var(--text);
     margin-left: 4rem;
     font-weight: 500;
     transition: 0.3s ease;
@@ -96,7 +97,9 @@ nav a:hover, nav a.active{
 }
 
 /* dark mode */
-
+.dark2{
+    display: inline-block;
+}
 .close-sidebar-button svg{
     width: 30px;
     height: 30px;
@@ -120,8 +123,8 @@ nav a:hover, nav a.active{
 body:has(#dark-mode:checked){
     /* filter: invert(100%); */
     --bg_black: rgb(201, 201, 201);
-    color: black;
     --vx: rgb(178, 178, 178);
+    --text:black;
 }
 
 /* home & about */
@@ -540,7 +543,9 @@ span{
     }
 }
 @media(max-width:995px){
-
+    .dark2{
+        display: none;
+    }
     .links-container{
         position: fixed;
         flex-direction: column;
@@ -555,6 +560,7 @@ span{
         /* glassssssssssssssssssss */
         box-shadow: inset 0 0 15px rgb(46, 45, 45), 0 0 18px 3px rgba(0, 0, 0, 0.847);
         background-color: #161616;
+        background-color: var(--vx);
         transform-origin: top right; /* Set the origin to top right */
         transform: scale(0); /* Start scaled down */
         transition: transform .6s ease-in-out, border-radius .6s ease-in-out;
